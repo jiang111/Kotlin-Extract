@@ -1,1 +1,1 @@
-include ':app', ':kotlinutils'
+include ':app', ':kotlinextract'

@@ -75,3 +75,23 @@ fun android.support.v4.app.Fragment.removeIt(key: String) = activity.removeIt(ke
 fun android.support.v4.app.Fragment.sp_clear() = activity.sp_clear()
 
 
+/**
+ * Any
+ */
+fun Any.sp_saveString(context: Context, key: String, value: String) = context.sp_saveString(key, value)
+
+fun Any.sp_saveInt(context: Context, key: String, value: Int) = context.sp_saveInt(key, value)
+fun Any.sp_saveBool(context: Context, key: String, value: Boolean) = context.sp_saveBool(key, value)
+fun Any.sp_saveFloat(context: Context, key: String, value: Float) = context.sp_saveFloat(key, value)
+fun Any.sp_saveLong(context: Context, key: String, value: Long) = context.sp_saveLong(key, value)
+fun Any.sp_saveObject(context: Context, key: String, value: Any) = context.sp_saveObject(key, value)
+
+fun Any.sp_getString(context: Context, key: String, default: String = ""): String = context.sp_getString(key, default)
+fun Any.sp_getInt(context: Context, key: String, default: Int = 0): Int = context.sp_getInt(key, default)
+fun Any.sp_getBool(context: Context, key: String, default: Boolean = false): Boolean = context.sp_getBool(key, default)
+fun Any.sp_getFloat(context: Context, key: String, default: Float = 0f): Float = context.sp_getFloat(key, default)
+fun Any.sp_getLong(context: Context, key: String, default: Long = 0L): Long = context.sp_getLong(key, default)
+fun <T> Any.sp_getObject(context: Context, key: String): T? = context.sp_getObject(key)
+
+fun Any.removeIt(context: Context, key: String) = context.removeIt(key)
+fun Any.sp_clear(context: Context) = context.sp_clear()

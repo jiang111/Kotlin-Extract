@@ -2,8 +2,9 @@ package com.jiang.android.kotlinutildemo
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.jyuesong.android.kotlinutils.async
-import com.jyuesong.android.kotlinutils.runUI
+import com.jyuesong.android.kotlin.extract.async
+import com.jyuesong.android.kotlin.extract.runUI
+import com.jyuesong.android.kotlin.extract.sp_saveString
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        sp_saveString("sdf", "saf")
         val t = async {
             Thread.sleep(3000)
 

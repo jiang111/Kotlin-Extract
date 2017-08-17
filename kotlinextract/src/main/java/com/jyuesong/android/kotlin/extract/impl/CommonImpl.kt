@@ -29,6 +29,17 @@ internal object CommonImpl {
         return (px / scale + 0.5f).toInt()
     }
 
+    fun sp2px(context: Context, sp: Int): Int {
+        val fontScale = context.resources.displayMetrics.scaledDensity
+        return (sp * fontScale + 0.5f).toInt()
+
+    }
+
+    fun px2sp(context: Context, px: Int): Int {
+        val fontScale = context.resources.displayMetrics.scaledDensity
+        return (px / fontScale + 0.5f).toInt()
+    }
+
     fun loadColor(context: Context, @ColorRes id: Int): Int {
         return ContextCompat.getColor(context, id)
     }
