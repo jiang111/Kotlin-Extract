@@ -1,6 +1,6 @@
 # Kotlin-Extract
 
-Kotlin-Extract is a "toolbox" for Kotlin Android developer. The library contains a lot of helpers for Android SDK, including, but not limited to:
+Kotlin-Extract is a "toolbox" for Kotlin Android developer.  like[anko](https://github.com/Kotlin/anko):
 
 >* SharedPreference
 ```java
