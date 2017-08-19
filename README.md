@@ -2,6 +2,28 @@
 
 Kotlin-Extract is a "toolbox" for Kotlin Android developer.  like [anko](https://github.com/Kotlin/anko) , The library contains a lot of helpers for Android SDK, including, but not limited to:
 
+### depend
+
+Step 1. Add the JitPack repository to your build file
+Add it in your root build.gradle at the end of repositories:
+```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+Step 2. Add the dependency [![](https://jitpack.io/v/jiang111/Kotlin-Extract.svg)](https://jitpack.io/#jiang111/Kotlin-Extract)
+
+```
+	dependencies {
+	        compile 'com.github.jiang111:Kotlin-Extract:lasted_version'
+	}
+```
+
+### Feature
+
 >* toast
 ```java
 
