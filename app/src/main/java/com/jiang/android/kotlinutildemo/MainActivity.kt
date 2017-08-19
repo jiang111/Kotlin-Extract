@@ -27,5 +27,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        hello.apply {
+            text="sd"
+        }
+
+
     }
 }

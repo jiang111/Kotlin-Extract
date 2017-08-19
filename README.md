@@ -41,3 +41,11 @@ async{
 
 ```
 
+>* FragmentActivity
+```java
+switchFragment(...)
+replaceFragment(...)
+addFragment(...)
+
+```
+
