@@ -15,16 +15,29 @@ inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> Unit) {
     fragmentTransaction.commit()
 }
 
-fun FragmentActivity._addFragment(fragment: Fragment, frameId: Int) {
-    supportFragmentManager.inTransaction { add(frameId, fragment) }
-}
-
-fun FragmentActivity._replaceFragment(fragment: Fragment, frameId: Int) {
-    supportFragmentManager.inTransaction { replace(frameId, fragment) }
+inline fun android.app.FragmentManager.inTransaction(func: android.app.FragmentTransaction.() -> Unit) {
+    val fragmentTransaction = beginTransaction()
+    fragmentTransaction.func()
+    fragmentTransaction.commit()
 }
 
 fun FragmentActivity._switchFragment(from: Fragment?, to: Fragment, frameId: Int) {
     supportFragmentManager.inTransaction {
+        if (from == null) {
+            replace(frameId, to)
+        } else {
+            if (!to.isAdded) {
+                hide(from).add(frameId, to)
+            } else {
+                hide(from).show(to)
+            }
+
+        }
+    }
+}
+
+fun FragmentActivity._switchFragment(from: android.app.Fragment?, to: android.app.Fragment, frameId: Int) {
+    fragmentManager.inTransaction {
         if (from == null) {
             replace(frameId, to)
         } else {

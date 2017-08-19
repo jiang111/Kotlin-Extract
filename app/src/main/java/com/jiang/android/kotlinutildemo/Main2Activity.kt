@@ -2,6 +2,7 @@ package com.jiang.android.kotlinutildemo
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.jyuesong.android.kotlin.extract._browse
 import kotlinx.android.synthetic.main.activity_main2.*
 
 /**
@@ -22,6 +23,12 @@ class Main2Activity : AppCompatActivity() {
         _age.text = age.toString()
         _male.text = male.toString()
         setResult(100)
+        _male.apply {
+            text = male.toString()
+            setOnClickListener {
+                _browse("https://www.github.com", true)
+            }
+        }
 
     }
 }
