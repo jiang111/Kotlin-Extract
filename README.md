@@ -41,7 +41,13 @@ _sp2px(20)
 ...
 
 ```
->* sp_*
+>* SharedPreference
+
+config in your application
+ ```java
+SharedPreferenceImpl.init(this, "name")
+```
+then 
 ```java
 
 sp_saveString("key","value")
@@ -62,10 +68,11 @@ t.cancel()
 
 ```
 
->* startActivity
+>* startActivity/Sercice
 ```java
 
-_startActivity<Main2Activity>("id" to 5, "name" to "hello", "age" to 12, "male" to true)
+_startActivity<Activity>("id" to 5, "name" to "hello", "age" to 12, "male" to true)
+_startService<Service>("id" to 5, "name" to "hello", "age" to 12, "male" to true)
 ...
 
 ```
