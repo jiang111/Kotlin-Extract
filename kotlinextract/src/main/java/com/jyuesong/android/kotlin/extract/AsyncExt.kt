@@ -12,13 +12,13 @@ import java.util.concurrent.Future
  */
 
 
-inline fun async(crossinline f: () -> Unit) {
+inline fun _async(crossinline f: () -> Unit) {
     BackgroundExecutor.submit {
         f()
     }
 }
 
-inline fun Activity.runUI(crossinline f: () -> Unit) {
+inline fun Activity._runUI(crossinline f: () -> Unit) {
     if (Thread.currentThread() == Looper.getMainLooper().thread) {
         f()
     } else {
@@ -54,17 +54,17 @@ fun <T> T.async(
     }
 }
 
-inline fun Fragment.runUI(crossinline f: () -> Unit) {
-    this?.activity?.runUI { f() }
+inline fun Fragment._runUI(crossinline f: () -> Unit) {
+    this?.activity?._runUI { f() }
 }
 
 
-inline fun android.support.v4.app.Fragment.runUI(crossinline f: () -> Unit) {
-    this?.activity?.runUI { f() }
+inline fun android.support.v4.app.Fragment._runUI(crossinline f: () -> Unit) {
+    this?.activity?._runUI { f() }
 }
 
 
-inline fun runUI(crossinline f: () -> Unit) {
+inline fun _runUI(crossinline f: () -> Unit) {
     BackgroundExecutor.handler.post { f() }
 
 }

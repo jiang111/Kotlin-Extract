@@ -15,15 +15,15 @@ inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> Unit) {
     fragmentTransaction.commit()
 }
 
-fun FragmentActivity.addFragment(fragment: Fragment, frameId: Int) {
+fun FragmentActivity._addFragment(fragment: Fragment, frameId: Int) {
     supportFragmentManager.inTransaction { add(frameId, fragment) }
 }
 
-fun FragmentActivity.replaceFragment(fragment: Fragment, frameId: Int) {
+fun FragmentActivity._replaceFragment(fragment: Fragment, frameId: Int) {
     supportFragmentManager.inTransaction { replace(frameId, fragment) }
 }
 
-fun FragmentActivity.switchFragment(from: Fragment?, to: Fragment, frameId: Int) {
+fun FragmentActivity._switchFragment(from: Fragment?, to: Fragment, frameId: Int) {
     supportFragmentManager.inTransaction {
         if (from == null) {
             replace(frameId, to)

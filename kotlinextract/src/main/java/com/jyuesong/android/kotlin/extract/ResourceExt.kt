@@ -15,26 +15,26 @@ import com.jyuesong.android.kotlin.extract.impl.CommonImpl
 /**
  * context
  */
-fun Context.loadColor(@ColorRes id: Int): Int = CommonImpl.loadColor(this, id)
+fun Context._loadColor(@ColorRes id: Int): Int = CommonImpl.loadColor(this, id)
 
-fun Context.loadDrawable(@ColorRes id: Int): Drawable = CommonImpl.loadDrawable(this, id)
+fun Context._loadDrawable(@ColorRes id: Int): Drawable = CommonImpl.loadDrawable(this, id)
 
 
 /**
  * view
  */
-fun View.loadColor(@ColorRes id: Int): Int = context.loadColor(id)
+fun View._loadColor(@ColorRes id: Int): Int = context._loadColor(id)
 
-fun View.loadDrawable(@ColorRes id: Int): Drawable = context.loadDrawable(id)
+fun View._loadDrawable(@ColorRes id: Int): Drawable = context._loadDrawable(id)
 
 
 /**
  * fragment
  */
-fun Fragment.loadColor(@ColorRes id: Int): Int = activity.loadColor(id)
+fun Fragment._loadColor(@ColorRes id: Int): Int = activity._loadColor(id)
 
-fun Fragment.loadDrawable(@ColorRes id: Int): Drawable = activity.loadDrawable(id)
+fun Fragment._loadDrawable(@ColorRes id: Int): Drawable = activity._loadDrawable(id)
 
-fun android.support.v4.app.Fragment.loadColor(@ColorRes id: Int): Int = activity.loadColor(id)
+fun android.support.v4.app.Fragment._loadColor(@ColorRes id: Int): Int = activity._loadColor(id)
 
-fun android.support.v4.app.Fragment.loadDrawable(@ColorRes id: Int): Drawable = activity.loadDrawable(id)
+fun android.support.v4.app.Fragment._loadDrawable(@ColorRes id: Int): Drawable = activity._loadDrawable(id)

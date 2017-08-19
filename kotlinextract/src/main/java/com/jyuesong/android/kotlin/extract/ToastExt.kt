@@ -13,33 +13,33 @@ import com.jyuesong.android.kotlin.extract.impl.CommonImpl
 /**
  * context
  */
-fun Context.toast(msg: CharSequence) = CommonImpl.toast(context = this, msg = msg, time = Toast.LENGTH_SHORT)
+fun Context._toast(msg: CharSequence) = CommonImpl.toast(context = this, msg = msg, time = Toast.LENGTH_SHORT)
 
 
-fun Context.longtoast(msg: CharSequence) = CommonImpl.toast(context = this, msg = msg, time = Toast.LENGTH_LONG)
+fun Context._long_toast(msg: CharSequence) = CommonImpl.toast(context = this, msg = msg, time = Toast.LENGTH_LONG)
 
 
 /**
  * view
  */
-fun View.toast(msg: CharSequence) = context.toast(msg)
+fun View._toast(msg: CharSequence) = context._toast(msg)
 
 
-fun View.longtoast(msg: CharSequence) = context.longtoast(msg)
+fun View._long_toast(msg: CharSequence) = context._long_toast(msg)
 
 
 /**
  * fragment
  */
-fun Fragment.toast(msg: CharSequence) = activity.toast(msg)
+fun Fragment._toast(msg: CharSequence) = activity._toast(msg)
 
 
-fun Fragment.longtoast(msg: CharSequence) = activity.longtoast(msg)
+fun Fragment._long_toast(msg: CharSequence) = activity._long_toast(msg)
 
 
-fun android.support.v4.app.Fragment.toast(msg: CharSequence) = activity.toast(msg)
+fun android.support.v4.app.Fragment._toast(msg: CharSequence) = activity._toast(msg)
 
 
-fun android.support.v4.app.Fragment.longtoast(msg: CharSequence) = activity.longtoast(msg)
+fun android.support.v4.app.Fragment._long_toast(msg: CharSequence) = activity._long_toast(msg)
 
 
