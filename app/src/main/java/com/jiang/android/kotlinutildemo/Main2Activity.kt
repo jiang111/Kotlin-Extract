@@ -30,5 +30,11 @@ class Main2Activity : AppCompatActivity() {
             }
         }
 
+        _age.apply {
+            setOnClickListener {
+
+            }
+        }
+
     }
 }
