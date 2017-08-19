@@ -36,7 +36,7 @@ inline fun Activity._runUI(crossinline f: () -> Unit) {
 
 private val crashLogger = { throwable: Throwable -> throwable.printStackTrace() }
 
-fun <T> T.async(
+fun <T> T._async(
         exceptionHandler: ((Throwable) -> Unit)? = crashLogger,
         f: T.() -> Unit
 ): Future<Unit> {
