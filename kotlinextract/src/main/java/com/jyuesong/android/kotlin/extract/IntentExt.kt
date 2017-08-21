@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Fragment
 import android.app.Service
 import android.content.Context
+import android.os.Bundle
 import com.jyuesong.android.kotlin.extract.impl.IntentImpl
 
 /**
@@ -38,3 +39,5 @@ inline fun Context._email(email: String, subject: String = "", text: String = ""
 inline fun Context._makeCall(number: String): Boolean = IntentImpl.makeCall(this, number)
 
 inline fun Context._sendSMS(number: String, text: String = ""): Boolean = IntentImpl.sendSMS(this, number, text)
+
+fun Any._bundleOf(vararg params: Pair<String, Any>): Bundle = IntentImpl.bundleOf(params)
