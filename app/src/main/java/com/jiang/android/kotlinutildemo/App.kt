@@ -1,6 +1,7 @@
 package com.jiang.android.kotlinutildemo
 
 import android.app.Application
+import com.jyuesong.android.kotlin.extract.impl.LogImpl
 import com.jyuesong.android.kotlin.extract.sp.SharedPreferenceImpl
 
 /**
@@ -11,6 +12,7 @@ class App : Application() {
         super.onCreate()
         SharedPreferenceImpl.init(this, "nama")
 
+        LogImpl.init(BuildConfig.DEBUG, "app")
     }
 
 }

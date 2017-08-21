@@ -85,3 +85,17 @@ _loadDrawable(R.drawable.f)
 
 ```
 
+
+### Feature in NextVersion 
+>* log
+```java
+//in Application
+LogImpl.init(debug,tag)
+// use in any class
+_i(msg="msg",tag="tag")
+_i(msg="msg")
+_json(msg="msg",tag="tag")
+_json(msg="msg")
+...
+
+```

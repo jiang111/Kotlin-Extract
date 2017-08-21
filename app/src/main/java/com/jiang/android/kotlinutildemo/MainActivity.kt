@@ -27,6 +27,18 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        val json: String = """
+            { "code" : "0",
+  "text" : "hello world"
+}
+            """
+
+        _json(msg = json)
+
+        _v("sfd")
+
+        _i(msg = "hadsfsdfs")
+
         hello.apply {
             text = "sd"
             setOnClickListener {
