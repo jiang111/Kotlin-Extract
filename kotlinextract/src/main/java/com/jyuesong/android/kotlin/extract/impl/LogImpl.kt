@@ -1,6 +1,7 @@
 package com.jyuesong.android.kotlin.extract.impl
 
 import android.util.Log
+import org.json.JSONArray
 import org.json.JSONObject
 
 /**
@@ -46,6 +47,17 @@ object LogImpl {
 
         }
 
+    }
+
+    internal fun log_json(msg: JSONObject, tag: String) {
+        if (!DEBUG) return
+        Log.d(tag, msg.toString(4))
+
+    }
+
+    internal fun log_json(msg: JSONArray, tag: String) {
+        if (!DEBUG) return
+        Log.d(tag, msg.toString(4))
     }
 
 }
