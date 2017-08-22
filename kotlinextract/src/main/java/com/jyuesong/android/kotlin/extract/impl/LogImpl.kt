@@ -19,6 +19,7 @@ object LogImpl {
     internal const val LEVEL_W = 3
     internal const val LEVEL_E = 4
     internal const val LEVEL_JSON = 5
+    internal const val LEVEL_WTF = 6
 
     fun init(debug: Boolean, tag: String) {
         TAG = tag
@@ -36,12 +37,19 @@ object LogImpl {
             LEVEL_I -> Log.i(tag, msg)
             LEVEL_W -> Log.w(tag, msg)
             LEVEL_E -> Log.e(tag, msg)
+            LEVEL_WTF -> Log.wtf(tag, msg)
             LEVEL_JSON -> {
                 try {
                     val json = JSONObject(msg)
                     Log.d(tag, json.toString(4))
                 } catch (e: Exception) {
-                    Log.d(tag, e.toString())
+                    try {
+                        val json2 = JSONArray(msg)
+                        Log.d(tag, json2.toString(4))
+                    } catch (e: Exception) {
+                        Log.d(tag, e.toString())
+                    }
+
                 }
             }
 

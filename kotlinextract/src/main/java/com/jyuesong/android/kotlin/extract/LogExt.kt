@@ -9,18 +9,15 @@ import org.json.JSONObject
  */
 fun Any._v(msg: String, tag: String = LogImpl.TAG) = LogImpl.log_msg(tag, msg, LogImpl.LEVEL_V)
 
-
 fun Any._d(msg: String, tag: String = LogImpl.TAG) = LogImpl.log_msg(tag, msg, LogImpl.LEVEL_D)
-
 
 fun Any._i(msg: String, tag: String = LogImpl.TAG) = LogImpl.log_msg(tag, msg, LogImpl.LEVEL_I)
 
-
 fun Any._w(msg: String, tag: String = LogImpl.TAG) = LogImpl.log_msg(tag, msg, LogImpl.LEVEL_W)
-
 
 fun Any._e(msg: String, tag: String = LogImpl.TAG) = LogImpl.log_msg(tag, msg, LogImpl.LEVEL_E)
 
+fun Any._wtf(msg: String, tag: String = LogImpl.TAG) = LogImpl.log_msg(tag, msg, LogImpl.LEVEL_WTF)
 
 fun Any._json(msg: String, tag: String = LogImpl.TAG) = LogImpl.log_msg(tag, msg, LogImpl.LEVEL_JSON)
 
