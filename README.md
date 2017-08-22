@@ -85,8 +85,6 @@ _loadDrawable(R.drawable.f)
 
 ```
 
-
-### Feature in NextVersion 
 >* log
 ```java
 //in Application
