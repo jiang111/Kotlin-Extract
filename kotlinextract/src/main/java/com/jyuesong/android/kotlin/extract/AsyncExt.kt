@@ -18,12 +18,13 @@ inline fun _async(crossinline f: () -> Unit) {
     }
 }
 
-inline fun Activity._runUI(crossinline f: () -> Unit) {
+inline fun Activity?._runUI(crossinline f: () -> Unit) {
     if (Thread.currentThread() == Looper.getMainLooper().thread) {
         f()
     } else {
+        if (this == null) return
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            if (!this?.isDestroyed) this?.runOnUiThread { f() }
+            if (this?.isDestroyed) this?.runOnUiThread { f() }
         } else {
             this?.runOnUiThread {
                 f()
@@ -54,12 +55,12 @@ fun <T> T._async(
     }
 }
 
-inline fun Fragment._runUI(crossinline f: () -> Unit) {
+inline fun Fragment?._runUI(crossinline f: () -> Unit) {
     this?.activity?._runUI { f() }
 }
 
 
-inline fun android.support.v4.app.Fragment._runUI(crossinline f: () -> Unit) {
+inline fun android.support.v4.app.Fragment?._runUI(crossinline f: () -> Unit) {
     this?.activity?._runUI { f() }
 }
 
