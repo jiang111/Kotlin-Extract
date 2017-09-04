@@ -97,3 +97,16 @@ _json(msg="msg")
 ...
 
 ```
+
+>* View
+```java
+view.hide()
+view.show()
+view.invisible()
+view.toggle()
+view.fadeIn()
+view.fadeOut()
+EditText.showKeyBoard()
+
+
+```
